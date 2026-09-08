@@ -4,6 +4,11 @@ ALGORITHMS = {
   "xor" => {
     path: "./xor/xor", # Tasteful, really.
     implementation: -> { RCrypt::XOR }
+  },
+
+  "vigenere" => {
+    path: "./vigenere/vigenere", # Really.
+    implementation: -> { RCrypt::Vigenere}
   }
 }.freeze
 
