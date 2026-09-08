@@ -2,13 +2,18 @@ require "optparse"
 
 ALGORITHMS = {
   "xor" => {
-    path: "./xor/xor", # Tasteful, really.
+    path: "./algo/xor", # Tasteful, really.
     implementation: -> { RCrypt::XOR }
   },
 
   "vigenere" => {
-    path: "./vigenere/vigenere", # Really.
+    path: "./algo/vigenere", # Really.
     implementation: -> { RCrypt::Vigenere}
+  },
+
+  "rc4" => {
+    path: "./algo/rc4", # It's like a Warhol.
+    implementation: -> { RCrypt::RC4 }
   }
 }.freeze
 

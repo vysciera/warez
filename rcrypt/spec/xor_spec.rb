@@ -1,4 +1,4 @@
-require_relative "../xor/xor"
+require_relative "../algo/xor"
 
 RSpec.describe RCrypt::XOR do
   describe ".encrypt" do

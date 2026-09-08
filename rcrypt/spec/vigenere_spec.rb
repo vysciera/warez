@@ -1,4 +1,4 @@
-require_relative "../vigenere/vigenere"
+require_relative "../algo/vigenere"
 
 RSpec.describe RCrypt::Vigenere do
   describe ".encrypt" do
