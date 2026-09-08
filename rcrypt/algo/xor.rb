@@ -9,7 +9,7 @@ module RCrypt
     # pack("H*") | unpack1("H*")
     # 'H' - Hex string (high nibble first)
     # 'C' - Unsigned Character
-    # '*" - Apply as many times as needed
+    # '*' - Apply as many times as needed
 
     def self.encrypt(text, key:)
       apply(text, key).unpack1("H*")

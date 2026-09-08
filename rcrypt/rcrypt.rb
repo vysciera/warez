@@ -14,6 +14,11 @@ ALGORITHMS = {
   "rc4" => {
     path: "./algo/rc4", # It's like a Warhol.
     implementation: -> { RCrypt::RC4 }
+  },
+
+  "tea" => {
+    path: "./algo/tea",
+    implementation: -> { RCrypt::TEA }
   }
 }.freeze
 
