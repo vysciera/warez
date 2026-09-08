@@ -1,6 +1,6 @@
 require "optparse"
 
-algorithms = {
+ALGORITHMS = {
   "xor" => {
     path: "./xor/xor", # Tasteful, really.
     implementation: -> { RCrypt::XOR }
@@ -73,7 +73,7 @@ if text.empty?
   exit 1
 end
 
-require_relatie config[:path]
+require_relative config[:path]
 
 algorithm = config[:implementation].call
 
