@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"time"
 )
 
 func main() {
@@ -25,9 +26,23 @@ func main() {
 
 	fmt.Println("listener connected")
 
-	_, err = fmt.Fprintln(conn, "S01 48172 00691 33104")
-	if err != nil {
-		log.Println(err)
-		return
+	ticker := time.NewTicker(5 * time.Second)
+	defer ticker.Stop()
+	
+	var sequence uint64
+
+	for now := range ticker.C {
+		sequence ++
+
+		_, err := fmt.Fprintf(
+			conn,
+			"%s S01 #%06d 48172 00691 33104\n",
+			now.UTC().Format("15:04:05"),
+			sequence,
+		)
+		if err != nil {
+			log.Println("transmission failed:", err)
+			return
+		}
 	}
 }
